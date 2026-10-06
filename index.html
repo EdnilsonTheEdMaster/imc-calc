@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        .desnutrido {
+            background-color: bisque;
+            color: red;
+        }
+        .normal {
+            background-color: blue;
+            color: black
+        }
+        .preobeso {
+            background-color: brown;
+            color: rgb(100, 139, 0);
+        }
+        .obeso {
+            background-color: red;
+            color:white;
+        }
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <hr>
+    
+    <script>
+        //entradas
+        var nome = prompt("Digite o seu nome")
+        document.write("Olá <strong>",nome,"</strong><br>")
+        var pesotexto = prompt("Digite o peso")
+        var alturatexto = prompt("Digite a altura")
+        //processamento
+        var peso = parseFloat(pesotexto)
+        var altura = parseFloat(alturatexto)
+        var IMC = peso / (altura*altura)
+        document.write("Peso: ",peso,"<br>")
+        document.write("Altura: ",altura,"<br>")
+        document.write("IMC:",IMC.toFixed(2),"<br>")
+        if (IMC <= 18.5){
+            document.write("<p class=desnutrido>Você está desnutrido</p><br>")
+            document.write('<img src="desnutrido.jpg" width="120" height="120" alt="Pessoa desnutrida">')
+            
+        } else if (IMC <= 24.9){
+            document.write("<p class=normal>Você está com peso normal</p><br>")
+            document.write('<img src="normal.jpg" width="120" height="120" alt="Pessoa com peso normal">')
+        } else if (IMC <= 29.9){
+            document.write("<p class=preobeso>Você está com sobrepeso pré-obesidade</p><br>")
+            document.write('<img src="preobeso.jpg" width="120" height="120" alt="Pessoa com pré-obesidade">')
+        } else {
+            document.write("<p class=obeso>Cuidado, você está obeso.</b><br>")
+            document.write('<img src="obeso.jpg" width="120" height="120" alt="Pessoa com peso acima, obeso">')
+        }
+
+    </script>
+</body>
+</html>
