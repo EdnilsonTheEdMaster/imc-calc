@@ -42,7 +42,7 @@
         var peso = parseFloat(pesotexto)
         var altura = parseFloat(alturatexto)
         var IMC = peso / (altura*altura)
-        document.write("Peso: ",peso,"<br>")
+        document.write("<p class=obeso>Peso: ",peso,"</p><br>")
         document.write("Altura: ",altura,"<br>")
         document.write("IMC:",IMC.toFixed(2),"<br>")
         if (IMC <= 18.5){
